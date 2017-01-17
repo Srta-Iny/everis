@@ -1,15 +1,15 @@
 .iphone {
-    background: #c7dc25;
-    border-radius: 40px;
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 100;
-    height: 60vh;
-    margin: 20% 0% 0% 0%;
-    max-width: 320px;
-    padding: 100px 15px;
-    position: relative;
-    float: right;
+  background: #c7dc25;
+  border-radius: 40px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 100;
+  height: 70vh;
+  margin: 20% 0% 0% 0%;
+  max-width: 320px;
+  padding: 60px 15px;
+  position: relative;
+  float: right;
 }
 .iphone:before {
   background: rgba(0,0,0,0.35);
@@ -24,22 +24,20 @@
   z-index: 99;
 }
 .iphone:after {
-  background: #8fa008;
-  border: 4px solid #fff;
-  border-radius: 50%;
-  bottom: 5%;
   content: " ";
   height: 30px;
-  left: 50%;
-  margin-left: -27px;
   position: absolute;
   width: 40px;
   z-index: 99;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 .screen {
   background: #fff;
   border-radius: 2px;
-  height: 115%;
+  height: 90%;
   overflow: auto;
   padding: 20px;
   position: relative;
@@ -75,9 +73,7 @@
   box-shadow: inset 1px 9px 0 4px #fff, inset -9px 0px 0 2px #dedede, 0 0 0 1px #fff;
   left: -19px;
 }
-.send {
-  background: #2d8cfa;
-  color: #fff;
+#mvenviar {
   float: right;
 }
 .send:after {
@@ -87,24 +83,50 @@
 * {
   box-sizing: border-box;
 }
-/*vista usauario*/
+/*responsive*/
 .pbvoz {
-    margin: 10% 0% 0% 45%;
-    font-size: 1rem !important;
-    color: #fff;
-    z-index: 200;
-    position: relative;
+  font-size: 1rem!important;
+  margin: -17% 0 0 41%;
+  border-radius: 75%;
+  width: 17%;
+  padding: 5%;
 }
 .mvAvatar {
-    max-width: 100%;
-    height: 13%;
-    position: absolute;
-    right: 5%;
-    bottom: 85%;
-    margin: -10% 0% 0% 80%;
+  max-width: 100%;
+  height: 13%;
+  position: absolute;
+  right: 5%;
+  bottom: 85%;
+  margin: -10% 0% 0% 80%;
 }
-
 .mvinput {
-    height: 3vh;
-    margin-top: -20%;
+  margin: -5%;
+  color: #fff;
+}
+.mvbtn {
+  text-decoration: none;
+  color: #fff;
+  background-color: #26a69a;
+  letter-spacing: .5px;
+  transition: .2s ease-out;
+  cursor: pointer;
+  margin: 2% 0% 0% 30%;
+  border-radius: 30px;
+  width: 55%;
+  padding: 0%;
+}
+/*minimizar*/
+#pbmin{
+  border-radius: 8px;
+  height: 30px;
+  background-color: #26a69a;
+  margin: -10% 0% 0% 0%;
+}
+#pbmax{
+  color:white;
+  border-radius: 8px;
+  height: 30px;
+  background-color: #26a69a ;
+  float: right;
+  margin: 30px 30px 0 0;
 }

@@ -1,16 +1,25 @@
-function aparecer(){
-    
-        //obtengo informaciòn del input de mensaje
-        var inputSegundo= document.getElementById("mvtexto");
-        var letras= inputSegundo.value;
-        //caja del html donde se va agregar todo al final
-        var cajaHtml= document.getElementById("mvmensaje");
-        //creo al div contenedor del js
-        var cajaJs= document.createElement("div");
-        cajaJs.setAttribute("class" , "contenedorJs");
-      
-        cajaJs.appendChild(letras);
-        
-        cajaHtml.appendChild(cajaJs);
+var nn=document.getElementById('necesitas');
+   onload= function pbocult() {
+     nn.style.display='none';
+   };
+
+  function myFunction() {
+    var x = document.getElementById('pbchao');
+  
+    if (x.style.display === 'none') {
+        x.style.display = 'block';
+        nn.style.display='none';
+    } else {
+        x.style.display = 'none';
+        nn.style.display='block';
+    }
 }
-aparecer();
+$(document).ready(function(){
+  var newColor = localStorage.getItem('color');
+  var newFont = localStorage.getItem('font');
+  //var correoUser = localStorage.getItem('emailUser');
+  //var tarjeta = localStorage.getItem('creditCard');
+  //var tipo = localStorage.getItem('typeCard');
+  $(".iphone").css("background-color", newColor );
+  $(".iphone").css("font-family", newFont );
+});

@@ -1,43 +1,79 @@
-$('.form').find('input, textarea').on('keyup blur focus', function (e) {
+(function(){
+  $('.screen').append('<div class="receive message">'+'Hola'+'</div>');
+})();
 
-  var $this = $(this),
-      label = $this.prev('label');
 
-    if (e.type === 'keyup') {
-      if ($this.val() === '') {
-          label.removeClass('active highlight');
-        } else {
-          label.addClass('active highlight');
+$('#mvenviar').click (function(){
+  var mensaje=$('#mvtexto').val();
+  console.log('obteniendo' + mensaje);
+  leerApi(mensaje);
+  imprimir(mensaje);
+});
+
+var respuesta_context = '';
+
+function leerApi(textoEntrada){
+	var reproduzAudio= false;
+	var text= textoEntrada;
+  var ajaxURL = '';
+  if (respuesta_context.length !== null && respuesta_context.length !== ''){
+    ajaxURL = 'https://asistentev7.mybluemix.net/api/conversations/';
+  }else{
+    ajaxURL = 'https://asistentev7.mybluemix.net/api/conversations/' + respuesta_context;
+  }
+
+  var ajaxType = "POST";
+  var ajaxResponseParseMethod = "json";
+  var ajaxCrossDomain = true;
+  var headersAjax = {
+    'Accept': 'application/json',
+    'Content-type': 'application/json',
+    'CHANNEL': 'WEB',
+    'SUBCHANNEL': 'SIMPLE_TEXT',
+    'API-KEY': 'd92cf049-eae9-42fd-a74c-b451fd1192e2',
+		'OS':'WINDOWS',
+		'IP':'127.0.0.1',
+		'LOCALE':'es-ES'
+  };
+
+	console.log('llamar a la api reproduzAudio: '+reproduzAudio);
+    var message = {
+      text: text,
+      returnAudio: reproduzAudio
+    };
+
+    // console.log(message);
+
+        /* Define AJAX Settings */
+    jQuery.support.cors = true;
+    var ajaxDataToTarget = message;
+
+    jQuery.ajax({
+     headers:headersAjax,
+     type: ajaxType        ,
+     url: ajaxURL,
+     crossDomain: ajaxCrossDomain,
+     data: JSON.stringify(ajaxDataToTarget),
+     dataType: ajaxResponseParseMethod,
+
+    success:function(data) {
+      var respSasha = data.intent.text;
+      var respuesta_context = data.sesionCode;
+      console.log('respuesta: '+ respSasha);
+      $('.screen').append('<div class="receive message">'+respSasha+'</div>');
+
+    }, error: function(data) {
+            console.log("No se ha encontrado respuesta para su consulta");
         }
-    } else if (e.type === 'blur') {
-      if( $this.val() === '' ) {
-        label.removeClass('active highlight');
-      } else {
-        label.removeClass('highlight');
-      }
-    } else if (e.type === 'focus') {
+     });
 
-      if( $this.val() === '' ) {
-        label.removeClass('highlight');
-      }
-      else if( $this.val() !== '' ) {
-        label.addClass('highlight');
-      }
-    }
 
-});
+}
 
-$('.tab a').on('click', function (e) {
 
-  e.preventDefault();
 
-  $(this).parent().addClass('active');
-  $(this).parent().siblings().removeClass('active');
+function imprimir(texto){
 
-  target = $(this).attr('href');
-
-  $('.tab-content > div').not(target).hide();
-
-  $(target).fadeIn(600);
-
-});
+ $('.screen').append('<div class="send message">'+texto+'</div>');
+}
+>>>>>>> 6fe139c374b9b391a387ff617794ba47c25c7593
