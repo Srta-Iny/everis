@@ -1,7 +1,7 @@
 var nn=document.getElementById('necesitas');
    onload= function pbocult() {
      nn.style.display='none';
-   }
+   };
 
   function myFunction() {
     var x = document.getElementById('pbchao');
@@ -14,3 +14,12 @@ var nn=document.getElementById('necesitas');
         nn.style.display='block';
     }
 }
+$(document).ready(function(){
+  var newColor = localStorage.getItem('color');
+  var newFont = localStorage.getItem('font');
+  //var correoUser = localStorage.getItem('emailUser');
+  //var tarjeta = localStorage.getItem('creditCard');
+  //var tipo = localStorage.getItem('typeCard');
+  $(".iphone").css("background-color", newColor );
+  $(".iphone").css("font-family", newFont );
+});
