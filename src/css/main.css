@@ -270,3 +270,14 @@ textarea {
     background: none;
   }
 }
+@media screen and (max-width: 320px) {
+  #pbmin {
+    display: none;
+  }
+}
+.mvinput{
+  background-color: white;
+  height: 30px;
+  margin-top: 13px;
+  border-radius: 8px;
+}
