@@ -1,4 +1,4 @@
-(function(){ 
+(function(){
   $('.screen').append('<div class="receive message">'+'Hola'+'</div>');
 })();
 
@@ -21,7 +21,7 @@ function leerApi(textoEntrada){
   }else{
     ajaxURL = 'https://asistentev7.mybluemix.net/api/conversations/' + respuesta_context;
   }
-	
+
   var ajaxType = "POST";
   var ajaxResponseParseMethod = "json";
   var ajaxCrossDomain = true;
@@ -35,25 +35,25 @@ function leerApi(textoEntrada){
 		'IP':'127.0.0.1',
 		'LOCALE':'es-ES'
   };
-        
+
 	console.log('llamar a la api reproduzAudio: '+reproduzAudio);
     var message = {
       text: text,
       returnAudio: reproduzAudio
     };
-      
+
     // console.log(message);
 
         /* Define AJAX Settings */
     jQuery.support.cors = true;
-    var ajaxDataToTarget = message;  
+    var ajaxDataToTarget = message;
 
     jQuery.ajax({
-     headers:headersAjax,                     
-     type: ajaxType        ,                                                                                                            
-     url: ajaxURL,                                                                                                                                          
-     crossDomain: ajaxCrossDomain,                        
-     data: JSON.stringify(ajaxDataToTarget),     
+     headers:headersAjax,
+     type: ajaxType        ,
+     url: ajaxURL,
+     crossDomain: ajaxCrossDomain,
+     data: JSON.stringify(ajaxDataToTarget),
      dataType: ajaxResponseParseMethod,
 
     success:function(data) {
@@ -61,10 +61,10 @@ function leerApi(textoEntrada){
       var respuesta_context = data.sesionCode;
       console.log('respuesta: '+ respSasha);
       $('.screen').append('<div class="receive message">'+respSasha+'</div>');
-       
+
     }, error: function(data) {
             console.log("No se ha encontrado respuesta para su consulta");
-        }                                                                                           
+        }
      });
 
 
@@ -74,5 +74,6 @@ function leerApi(textoEntrada){
 
 function imprimir(texto){
 
- $('.screen').append('<div class="send message">'+texto+'</div>');  
+ $('.screen').append('<div class="send message">'+texto+'</div>');
 }
+>>>>>>> 6fe139c374b9b391a387ff617794ba47c25c7593
