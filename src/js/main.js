@@ -1,5 +1,6 @@
 (function(){
-  $('.screen').append('<div class="receive message">'+'Hola'+'</div>');
+  var saludo_data = localStorage.getItem('saludo');
+  $('.screen').append('<div class="receive message">'+saludo_data+'</div>');
 })();
 
 
@@ -8,6 +9,7 @@ $('#mvenviar').click (function(){
   console.log('obteniendo' + mensaje);
   leerApi(mensaje);
   imprimir(mensaje);
+  $('#mvtexto').val(" ");
 });
 
 var respuesta_context = '';
@@ -76,4 +78,3 @@ function imprimir(texto){
 
  $('.screen').append('<div class="send message">'+texto+'</div>');
 }
->>>>>>> 6fe139c374b9b391a387ff617794ba47c25c7593

@@ -23,12 +23,15 @@
 			<div class="row"><!--row1 section-->
 				<div class="col s12">
 					<h5>Configuracion de app chat Sasha4ever</h5>
-					<input type="file-path-wrapper" name="salud">
 				</div>
 			</div>
 			<div class="row">
+				<div class="input-field col s6">
+			        <input id="saludo" type="text" class="validate">
+			        <label for="saludo">Saludo Inicial</label>
+		        </div>
 				<div class="col s12">
-					<select class="browser-default" id="color">
+					<select class="input-field" id="color">
 						<option value="" disabled selected>Selecciona tu color</option>
 						<option value="red">rojo</option>
 						<option value="green">verde</option>
@@ -37,7 +40,7 @@
 						<option value="purple">morado</option>
 					</select>
 					<div>
-						<select class="browser-default" id="font">
+						<select class="input-field" id="font">
 							<option value="" disabled selected>Selecciona tu tipografia</option>
 							<option value="Arial">Arial</option>
 							<option value="Verdana">Verdana</option>
@@ -47,16 +50,16 @@
 						</select>
 					</div>
 					<div class="input-field">
-						<select class="browser-default">
+						<select class="input-field">
 							<option value="" disabled selected>Selecciona tu avatars</option>
 							<option value="" data-icon="dist/img/default_avatar_femela.jpg" class="circle img-responsive">example 1</option>
 							<option value="" data-icon="dist/img/default_avatar_male.jpg" class="circle img-responsive">example 2</option>
 							<option value="" data-icon="dist/img/default_avatar_femela.jpg" class="circle img-responsive">example 1</option>
 						</select>
 					</div>
-					<div>
-						<form action="#">
-							<div class="file-field input-field">
+					<div >
+						<form action="#" class="row">
+							<div class="file-field input-field col s10">
 								<div class="btn">
 									<span>File</span>
 									<input type="file" id="input" accept="image/*">
@@ -64,8 +67,8 @@
 								<div class="file-path-wrapper">
 									<input class="file-path validate" type="text">
 								</div>
-								<a href="#!" class=" modal-action waves-effect waves-green btn-flat" id="subir" name="action"><i class="material-icons right">cloud_upload</i>Subir</a>
 							</div>
+							<a href="#!" class=" modal-action wwaves-effect waves-light  btn-large col s2" id="subir" name="action"><i class="material-icons right">cloud_upload</i>Subir</a>
 						</form>
 
 					</div>

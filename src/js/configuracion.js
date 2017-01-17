@@ -30,6 +30,16 @@ $(document).ready(function(){
 	}
 });
 $(document).ready(function(){
+	$('#saludo').change(function(){
+		var saludoVal = $("#saludo").val();
+		console.log(saludoVal);
+		if(saludoVal === null || saludoVal === 0){
+			var $toastContent = $('<span> Por favor selecciona un color </span>');
+			Materialize.toast($toastContent, 2000);
+		}else{
+			localStorage.setItem('saludo', saludoVal);
+		}
+	});
 	$('#color').change(function(){
 		var colorVal = $("#color").val();
 		console.log(colorVal);
